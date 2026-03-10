@@ -1,0 +1,48 @@
+<section class="stack">
+
+  <h2>Mi Stack Tecnológico</h2>
+
+  <div class="stack-container">
+
+    <!-- Frontend -->
+    <div class="stack-category">
+      <h3>Front-End</h3>
+      @for (tech of frontEnd; track tech.name) {
+        <div class="skill">
+          <span class="skill-name">{{ tech.name }}</span>
+          <div class="skill-bar">
+            <div class="skill-fill" [style.width.%]="tech.level"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Backend -->
+    <div class="stack-category">
+      <h3>Back-End</h3>
+      @for (tech of backEnd; track tech.name) {
+        <div class="skill">
+          <span class="skill-name">{{ tech.name }}</span>
+          <div class="skill-bar">
+            <div class="skill-fill" [style.width.%]="tech.level"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- DevOps / Tools -->
+    <div class="stack-category">
+      <h3>DevOps & Tools</h3>
+      @for (tech of devOps; track tech.name) {
+        <div class="skill">
+          <span class="skill-name">{{ tech.name }}</span>
+          <div class="skill-bar">
+            <div class="skill-fill" [style.width.%]="tech.level"></div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+
+</section>

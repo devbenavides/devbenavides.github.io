@@ -1,6 +1,7 @@
+@use './styles/variables.scss' as vars;
+
 body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: #fafafa;
-  color: #111;
 }

@@ -1,11 +1,27 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fafafa;
-  color: #111;
+:root {
+  --bg-primary: #0f1115;
+  --bg-secondary: #1a1d24;
+  --accent: #00c896;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a3ad;
+  --border: #2a2f3a;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: auto;
 }

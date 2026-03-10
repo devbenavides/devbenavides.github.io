@@ -1,17 +1,96 @@
+/* ========================
+   CONTACT SECTION DARK/LIGHT
+   Con padding corregido para cards/modals
+========================= */
+
+/* Sección principal */
 .contact {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact h2 {
   text-align: center;
+  color: var(--accent);
+  margin-bottom: 3rem;
+  transition: color 0.3s;
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+/* Contenedor del formulario */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem; /* <-- padding interno */
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+  box-sizing: border-box; /* evita overflow por padding */
+}
 
-  a {
-    color: #111;
-    text-decoration: underline;
-    font-weight: 500;
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem; /* espacio interno dentro de cada input */
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Placeholder */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Botón */
+.contact-form button {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  background: var(--accent);
+  color: var(--bg-primary);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: var(--text-primary);
+  color: var(--accent);
+}
+
+/* Mensajes de error */
+.contact-form .error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Si está dentro de un card o modal */
+.card .contact-form,
+.modal-content .contact-form {
+  padding: 2rem; /* asegura espacio desde todos los bordes */
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .contact-form {
+    padding: 1.5rem;
   }
 }

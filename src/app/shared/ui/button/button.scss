@@ -1,0 +1,15 @@
+.btn {
+  background: var(--accent);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 200, 150, 0.4);
+}

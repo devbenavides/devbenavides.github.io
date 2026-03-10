@@ -1,16 +1,124 @@
-.about {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-  text-align: center;
+/* ========================
+   ABOUT SECTION DARK/LIGHT
+========================= */
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+/* Sección principal */
+.about {
+  padding: 4rem 2rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.about h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 3rem;
+}
+
+/* Contenedor flex */
+.about-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Avatar */
+.avatar {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.avatar img:hover {
+  transform: scale(1.05);
+}
+
+/* Contenido */
+.content {
+  flex: 2 1 400px;
+}
+
+.content h3 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.content h4 {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.skill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.skill-name {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.skill-level {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Achievements */
+.achievements h5 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.achievements ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .about-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  p {
-    font-size: 1.1rem;
-    color: #555;
+  .content {
+    text-align: center;
   }
 }

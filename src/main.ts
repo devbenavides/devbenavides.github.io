@@ -8,6 +8,6 @@ export const appConfig = {
     provideRouter(routes)
   ]
 };
-
+document.body.classList.add('dark');
 bootstrapApplication(App, appConfig)
   .catch((err) => console.error(err));

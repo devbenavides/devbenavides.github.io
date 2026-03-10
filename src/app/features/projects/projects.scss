@@ -1,39 +1,178 @@
 .projects {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-  text-align: center;
+  padding: 4rem 2rem;
+}
 
-  h2 {
-    font-size: 2rem;
+/* Título */
+.projects h2 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  transition: color 0.3s;
+  font-weight: 700;
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card individual */
+.card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* Info dentro de la card */
+.info {
+  padding: 1rem 1.2rem;
+}
+
+.info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.info p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-align: left;
+  max-width: 60ch;
+}
+
+/* Tech badges */
+.tech span {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.4rem 0.7rem;
+  margin: 0 0.3rem 0.3rem 0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: 14px;
+  max-width: 900px;
+  width: 90%;
+  padding: 2rem 2.5rem;
+  z-index: 2100;
+  animation: fadeIn 0.4s ease;
+  overflow-y: auto;
+  max-height: 90%;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--bg-primary);
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.close:hover {
+  background: var(--accent-hover);
+}
+
+/* Key features list */
+.key-features ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.key-features li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* Modal carousel y tech badges */
+.modal-carousel {
+  margin: 1.5rem 0;
+}
+
+.modal-content .tech span {
+  margin-bottom: 0.5rem;
+}
+
+/* Links de GitHub/Demo */
+.links a {
+  text-decoration: none;
+  color: var(--accent);
+  margin-right: 1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: var(--bg-primary);
+}
+
+/* Animación modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .modal-content {
+    padding: 1.5rem 1.8rem;
+  }
+  .projects h2 {
+    font-size: 1.6rem;
     margin-bottom: 2rem;
   }
-
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    .project {
-      padding: 1rem;
-      border: 1px solid #eee;
-      border-radius: 6px;
-
-      h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      a {
-        color: #111;
-        text-decoration: underline;
-        font-weight: 500;
-      }
-    }
-  }
-}
-.project img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 6px;
-  margin-bottom: 1rem;
 }

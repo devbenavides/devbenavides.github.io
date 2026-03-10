@@ -1,0 +1,117 @@
+/* ========================
+   HERO SECTION DARK/LIGHT
+========================= */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  max-width: 800px;
+  animation: fadeUp 1s ease;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Botones Hero */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  transform: scale(1.05);
+}
+
+/* Fondo Animado */
+.hero-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, var(--accent) 20%, transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--text-secondary) 20%, transparent 70%);
+  animation: rotateBG 20s linear infinite;
+  z-index: 1;
+  filter: blur(120px);
+  opacity: 0.5;
+  transition: background 0.3s;
+}
+
+/* Animaciones */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateBG {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-content h2 { font-size: 1.6rem; }
+  .hero-content p { font-size: 1rem; }
+}

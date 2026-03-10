@@ -1,14 +1,28 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { provideRouter, RouterOutlet } from '@angular/router';
 import { Navbar } from './layout/navbar/navbar';
+import { Footer } from './layout/footer/footer';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [Navbar, Footer, RouterOutlet],
+  template:`
+  <app-navbar (toggleTheme)="switchTheme()"></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  `,
 })
 export class App {
   protected readonly title = signal('Portfolio');
+  // Signal para saber si es dark theme
+  isDark = signal(true);
+
+  switchTheme() {
+    this.isDark.update(dark => {
+      document.body.classList.toggle('dark', !dark);
+      return !dark;
+    });
+  }
 }

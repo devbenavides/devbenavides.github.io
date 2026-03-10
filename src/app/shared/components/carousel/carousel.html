@@ -1,0 +1,44 @@
+<div class="carousel" 
+     (mouseenter)="stopAutoplay()" 
+     (mouseleave)="resumeAutoplay()">
+
+  <div class="slides">
+
+    <ng-container *ngFor="let image of images; let i = index">
+
+      <!-- Imagen PC -->
+      <img *ngIf="image.type === 'pc'"
+           [src]="image.url"
+           [alt]="image.alt || 'PC screenshot'"
+           class="pc"
+           [class.active]="i === currentIndex"
+           (mousemove)="onZoom($event)"
+           (mouseleave)="resetZoom($event)" />
+
+      <!-- Mockup teléfono (vertical y horizontal) -->
+      <div *ngIf="image.type === 'mobile' || image.type === 'mobile-landscape'"
+           class="phone"
+           [class.active]="i === currentIndex"
+           [class.landscape]="image.type === 'mobile-landscape'">
+        <img [src]="image.url"
+             [alt]="image.alt || 'Mobile screenshot'"
+             class="phone-screen" />
+      </div>
+
+    </ng-container>
+
+  </div>
+
+  <!-- Navegación -->
+  <button class="nav prev" (click)="prev()">‹</button>
+  <button class="nav next" (click)="next()">›</button>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span *ngFor="let img of images; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="goTo(i)"></span>
+  </div>
+
+</div>

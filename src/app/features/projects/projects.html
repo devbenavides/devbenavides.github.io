@@ -1,21 +1,72 @@
-<section class="projects" id="projects">
+<section class="projects">
+
   <h2>Proyectos</h2>
-  <div class="project-list">
-    <div class="project">
-      <img src="public/images/proyecto1.png" alt="Proyecto 1" />
-      <h3>Proyecto 1</h3>
-      <p>Descripción corta del proyecto.</p>
-      <a href="#" target="_blank">Ver en GitHub</a>
-    </div>
-    <div class="project">
-      <h3>AcademicTech</h3>
-      <p>Descripción corta del proyecto.</p>
-      <a href="#" target="_blank">Ver en GitHub</a>
-    </div>
-    <div class="project">
-      <h3>Proyecto 2</h3>
-      <p>Descripción corta del proyecto.</p>
-      <a href="#" target="_blank">Ver en GitHub</a>
-    </div>
+
+  <div class="grid">
+
+    @for (project of projects(); track project.id) {
+
+      <div class="card" (click)="openModal(project)">
+
+        <!-- Carousel del proyecto -->
+        <app-carousel [images]="project.images"></app-carousel>
+
+        <!-- Info resumida -->
+        <div class="info">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+
+          <div class="tech">
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+      </div>
+
+    }
+
   </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="modalOpen()">
+
+    <div class="modal-backdrop" (click)="closeModal()"></div>
+
+    <div class="modal-content">
+
+      <button class="close" (click)="closeModal()">✕</button>
+
+      <h3>{{ selectedProject?.title }}</h3>
+      <p>{{ selectedProject?.description }}</p>
+
+      <div class="key-features" *ngIf="selectedProject?.keyFeatures?.length">
+        <ul>
+          @for (feature of selectedProject?.keyFeatures; track feature) {
+            <li>{{ feature }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="modal-carousel">
+        <app-carousel [images]="selectedProject?.images || []"></app-carousel>
+      </div>
+
+      <div class="tech">
+        @for (tech of selectedProject?.technologies || []; track tech) {
+          <span>{{ tech }}</span>
+        }
+      </div>
+
+      <div class="links">
+        <a *ngIf="selectedProject?.githubBackend" href="{{ selectedProject?.githubBackend }}" target="_blank">GitHub Backend</a>
+        <a *ngIf="selectedProject?.githubFrontend" href="{{ selectedProject?.githubFrontend }}" target="_blank">GitHub Frontend</a>
+        <a *ngIf="selectedProject?.demo" href="{{ selectedProject?.demo }}" target="_blank">Demo</a>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>

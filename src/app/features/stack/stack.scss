@@ -1,0 +1,82 @@
+/* ========================
+   STACK SECTION DARK/LIGHT
+========================= */
+
+/* Sección principal */
+.stack {
+  padding: 4rem 2rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.stack h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 3rem;
+}
+
+/* Contenedor flex de categorías */
+.stack-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Categorías individuales */
+.stack-category {
+  flex: 1 1 250px;
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+
+.stack-category:hover {
+  transform: translateY(-5px);
+}
+
+/* Skill */
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
+  color: var(--accent);
+}
+
+/* Barra de progreso */
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0; /* será sobreescrito por Angular con [style.width.%] */
+  border-radius: 6px;
+  transition: width 1s ease;
+}
+
+/* Animación opcional de carga */
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--skill-width, 80%); } /* fallback 80% */
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .stack-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
