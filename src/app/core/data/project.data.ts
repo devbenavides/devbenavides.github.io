@@ -17,6 +17,16 @@ export const PROJECTS: Project[] = [
       'Persistencia de datos con PostgreSQL',
       'Interfaz responsiva optimizada para diferentes dispositivos'
     ],
+    futureImprovements: [
+      'Guardar el historial de ventas.',
+      'Generar reportes de ventas.',
+      'Mostrar estadísticas de productos más vendidos.',
+      'Agregar categorías para organizar los productos.',
+      'Implementar modo oscuro.',
+      'Permitir búsqueda y filtrado de productos.',
+      'Sincronizar datos con un backend.',
+      'Desarrollar una versión multiplataforma.'
+    ],
     images: [
       { url: 'assets/images/academic-tech/atb_1.png', type: 'pc' },
       { url: 'assets/images/academic-tech/atb_2.png', type: 'pc' },
@@ -44,6 +54,7 @@ export const PROJECTS: Project[] = [
     id: 2,
     title: 'Dron Universitario – Control desde Celular',
     description: 'Desarrollé la aplicación en Kotlin para Android que permite controlar el dron mediante conexión Bluetooth con una ESP32. Implementé la interfaz de usuario y la comunicación en tiempo real, asegurando un control preciso y funcional desde el dispositivo móvil.',
+
     keyFeatures: [
       'Desarrollo de la aplicación en Kotlin para Android, que permite al usuario controlar el dron de manera intuitiva desde un celular.',
       'Implementación de la conexión Bluetooth con la placa ESP32, garantizando la comunicación en tiempo real entre la aplicación y el dron.',
@@ -60,8 +71,46 @@ export const PROJECTS: Project[] = [
       { url: 'assets/images/control-dron/cd_7.png', type: 'pc' },
     ],
     technologies: ['Angular', 'Express', 'PostgreSQL'],
-    githubBackend: 'https://github.com/tuusuario/ecommerce',
-    githubFrontend: 'https://github.com/tuusuario/ecommerce',
-    demo: 'https://demo.com'
+    githubBackend: 'https://github.com/devbenavides/Control-Dron',
+    githubFrontend: '',
+    demo: ''
+  },
+  {
+    id: 3,
+    title: 'Mini POS Calculator',
+    description: 'Desarrolle la aplicación en Jetpack Compose y Kotlin que permite gestionar productos y calcular el total de una venta seleccionando cantidades y agregando valores adicionales. El proyecto fue creado para practicar desarrollo Android moderno utilizando arquitectura MVVM y componentes de Material Design.',
+    keyFeatures: [
+      'Agregar nuevos productos.',
+      'Editar productos existentes.',
+      'Eliminar productos.',
+      'Visualizar la lista de productos disponibles.',
+      'Escribir, aumentar o disminuir la cantidad de un producto.',
+      'Agregar valores adicionales a la venta.',
+      'Calcular el total de la venta.'
+
+    ],
+    futureImprovements: [
+      'Guardar el historial de ventas.',
+      'Generar reportes de ventas.',
+      'Mostrar estadísticas de productos más vendidos.',
+      'Agregar categorías para organizar los productos.',
+      'Implementar modo oscuro.',
+      'Permitir búsqueda y filtrado de productos.',
+      'Sincronizar datos con un backend.',
+      'Desarrollar una versión multiplataforma.'
+    ],
+    images: [
+      { url: 'assets/images/mini-pos-calculator/mc_1.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_2.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_3.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_4.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_5.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_6.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-calculator/mc_7.png', type: 'pc' },
+    ],
+    technologies: ['Jetpack Compose','Kotlin', 'SQLite' ],
+    githubBackend: 'https://github.com/devbenavides/mini-pos-calculator',
+    githubFrontend: '',
+    demo: ''
   }
 ];

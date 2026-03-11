@@ -3,6 +3,7 @@ export interface Project {
     title: string;
     description: string;
     keyFeatures: string[];
+    futureImprovements?: string[];
     technologies: string[];
     images: CarouselImage[];
     githubBackend?: string;

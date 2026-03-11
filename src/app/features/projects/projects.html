@@ -6,24 +6,22 @@
 
     @for (project of projects(); track project.id) {
 
-      <div class="card" (click)="openModal(project)">
+    <div class="card" (click)="openModal(project)">
 
-        <!-- Carousel del proyecto -->
-        <app-carousel [images]="project.images"></app-carousel>
+      <app-carousel [images]="project.images"></app-carousel>
 
-        <!-- Info resumida -->
-        <div class="info">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
+      <div class="info">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
 
-          <div class="tech">
-            @for (tech of project.technologies; track tech) {
-              <span>{{ tech }}</span>
-            }
-          </div>
+        <div class="tech">
+          @for (tech of project.technologies; track tech) {
+          <span>{{ tech }}</span>
+          }
         </div>
-
       </div>
+
+    </div>
 
     }
 
@@ -39,13 +37,25 @@
       <button class="close" (click)="closeModal()">✕</button>
 
       <h3>{{ selectedProject?.title }}</h3>
-      <p>{{ selectedProject?.description }}</p>
+      <p class="description">{{ selectedProject?.description }}</p>
 
-      <div class="key-features" *ngIf="selectedProject?.keyFeatures?.length">
+      <!-- Key Features -->
+      <div class="section-block key-features" *ngIf="selectedProject?.keyFeatures?.length">
+        <h4>Características Principales</h4>
         <ul>
           @for (feature of selectedProject?.keyFeatures; track feature) {
-            <li>{{ feature }}</li>
+          <li>{{ feature }}</li>
           }
+        </ul>
+      </div>
+
+      <!-- Future Improvements -->
+      <div class="section-block future-improvements" *ngIf="selectedProject?.futureImprovements?.length">
+        <h4>Mejoras Futuras</h4>
+        <ul>
+          <li *ngFor="let improvement of selectedProject?.futureImprovements">
+            {{ improvement }}
+          </li>
         </ul>
       </div>
 
@@ -55,14 +65,22 @@
 
       <div class="tech">
         @for (tech of selectedProject?.technologies || []; track tech) {
-          <span>{{ tech }}</span>
+        <span>{{ tech }}</span>
         }
       </div>
 
       <div class="links">
-        <a *ngIf="selectedProject?.githubBackend" href="{{ selectedProject?.githubBackend }}" target="_blank">GitHub Backend</a>
-        <a *ngIf="selectedProject?.githubFrontend" href="{{ selectedProject?.githubFrontend }}" target="_blank">GitHub Frontend</a>
-        <a *ngIf="selectedProject?.demo" href="{{ selectedProject?.demo }}" target="_blank">Demo</a>
+        <a *ngIf="selectedProject?.githubBackend" [href]="selectedProject?.githubBackend" target="_blank">
+          GitHub Backend
+        </a>
+
+        <a *ngIf="selectedProject?.githubFrontend" [href]="selectedProject?.githubFrontend" target="_blank">
+          GitHub Frontend
+        </a>
+
+        <a *ngIf="selectedProject?.demo" [href]="selectedProject?.demo" target="_blank">
+          Demo
+        </a>
       </div>
 
     </div>
