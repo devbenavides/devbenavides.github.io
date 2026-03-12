@@ -1,15 +1,23 @@
 <nav class="navbar">
-  <ul>
-    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a routerLink="/stack" routerLinkActive="active">Stack</a></li>
-    <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-    <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-  </ul>
+  <div class="navbar-container">
+    <a class="logo" routerLink="/">MiLogo</a>
 
-  <!-- Toggle de tema -->
-  <button class="theme-toggle" (click)="toggleTheme()">
-    {{ isDarkTheme() ? '🌙' : '☀️' }}
-  </button>
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+    <!-- Menú -->
+    <ul [class.active]="menuOpen">
+      <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Inicio</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Acerca de</a></li>
+      <li><a routerLink="/stack" routerLinkActive="active" (click)="closeMenu()">Stack</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Proyectos</a></li>
+      <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experiencia</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+
+    <!-- Botón de tema -->
+    <button class="theme-toggle" (click)="toggleTheme()">
+      {{ isDarkTheme() ? '🌙' : '☀️' }}
+    </button>
+  </div>
 </nav>

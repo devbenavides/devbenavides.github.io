@@ -17,16 +17,6 @@ export const PROJECTS: Project[] = [
       'Persistencia de datos con PostgreSQL',
       'Interfaz responsiva optimizada para diferentes dispositivos'
     ],
-    futureImprovements: [
-      'Guardar el historial de ventas.',
-      'Generar reportes de ventas.',
-      'Mostrar estadísticas de productos más vendidos.',
-      'Agregar categorías para organizar los productos.',
-      'Implementar modo oscuro.',
-      'Permitir búsqueda y filtrado de productos.',
-      'Sincronizar datos con un backend.',
-      'Desarrollar una versión multiplataforma.'
-    ],
     images: [
       { url: 'assets/images/academic-tech/atb_1.png', type: 'pc' },
       { url: 'assets/images/academic-tech/atb_2.png', type: 'pc' },
@@ -58,7 +48,7 @@ export const PROJECTS: Project[] = [
     keyFeatures: [
       'Desarrollo de la aplicación en Kotlin para Android, que permite al usuario controlar el dron de manera intuitiva desde un celular.',
       'Implementación de la conexión Bluetooth con la placa ESP32, garantizando la comunicación en tiempo real entre la aplicación y el dron.',
-      'Diseño de la interfaz de usuario enfocada en la experiencia de control, incluyendo botones de dirección, velocidad y funciones de vuelo.',
+      'Diseño de la interfaz de usuario enfocada en la experiencia de control, incluyendo botones de dirección y velocidad.',
       'Pruebas y ajuste de la latencia y confiabilidad de la comunicación entre la app y el dron, asegurando un control preciso durante las maniobras.'
     ],
     images: [

@@ -11,6 +11,6 @@ import { RouterLink } from '@angular/router';
 })
 export class Home {
   name = 'David Benavides';
-  role = 'Desarrollador Fullstack';
-  tagline = 'Fullstack developer especializado en Java + Spring Boot y Angular. Construyo APIs REST seguras, microservicios y aplicaciones web escalables.';
+  role = 'Fullstack Developer | Java + Spring Boot | Angular';
+  tagline = 'Construyo APIs REST seguras, microservicios y aplicaciones web escalables, enfocándome en rendimiento, arquitectura limpia y buenas prácticas de desarrollo';
 }

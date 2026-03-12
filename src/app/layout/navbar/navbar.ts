@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 })
 export class Navbar {
   isDarkTheme = signal(true); // tema por defecto oscuro
+  menuOpen = false;
 
   constructor() {
     // Aplicar tema al cargar la página
@@ -25,5 +26,13 @@ export class Navbar {
       'data-theme',
       this.isDarkTheme() ? 'dark' : 'light'
     );
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }

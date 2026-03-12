@@ -15,7 +15,7 @@ import { routes } from './app.routes';
   `,
 })
 export class App {
-  protected readonly title = signal('Portfolio');
+  protected readonly title = signal('Portafolio');
   // Signal para saber si es dark theme
   isDark = signal(true);
 

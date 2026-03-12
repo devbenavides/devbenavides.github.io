@@ -9,10 +9,13 @@ import { Component } from '@angular/core';
 })
 export class About {
   name = 'David Benavides';
-  role = 'Desarrollador Fullstack | Java + Spring Boot | Angular';
-  description = `Soy desarrollador Fullstack con experiencia en el desarrollo de aplicaciones web utilizando Java con Spring Boot en el backend y TypeScript con Angular en el frontend. 
-Me enfoco en construir aplicaciones escalables y mantenibles, aplicando buenas prácticas de desarrollo y arquitectura. Tengo experiencia diseñando e implementando APIs REST y microservicios, integrando autenticación y autorización con JWT y Spring Security.
-También trabajo con bases de datos relacionales como PostgreSQL y MySQL, y desarrollo interfaces modulares y reutilizables con Angular. Actualmente estoy aprendiendo React para ampliar mis habilidades en desarrollo frontend.`;
+  role = 'Fullstack Developer | Java + Spring Boot | Angular';
+  description = [
+    "Soy desarrollador Fullstack enfocado en la creación de aplicaciones web escalables y mantenibles.",
+    "Trabajo principalmente con Java y Spring Boot en el backend y TypeScript con Angular en el frontend, desarrollando APIs REST, microservicios y aplicaciones web modernas.",
+    "Tengo experiencia implementando sistemas de autenticación y autorización mediante JWT y Spring Security. Además, trabajo con bases de datos relacionales como PostgreSQL y MySQL, y desarrollo interfaces frontend modulares, reutilizables y mantenibles con Angular.",
+    "De forma complementaria, también tengo experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin.",
+    "Actualmente estoy aprendiendo React para ampliar mis habilidades en desarrollo frontend y seguir creciendo como desarrollador."];
 
   skills = [
     { name: "Java", level: "Avanzado" },

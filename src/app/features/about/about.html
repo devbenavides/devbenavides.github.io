@@ -6,7 +6,7 @@
 
     <!-- Foto / avatar -->
     <div class="avatar">
-      <img src="assets/images/perfil.jpeg" alt="{{name}}">
+      <img src="assets/images/perfil.png" alt="{{name}}">
     </div>
 
     <!-- Texto personal y skills -->
@@ -14,15 +14,17 @@
 
       <h3>{{ name }}</h3>
       <h4>{{ role }}</h4>
-      <p>{{ description }}</p>
+      @for (text of description; track text) {
+      <p>{{ text }}</p>
+      }
 
       <!-- Skills -->
       <div class="skills">
         @for (skill of skills; track skill.name) {
-          <div class="skill">
-            <span class="skill-name">{{ skill.name }}</span>
-            <span class="skill-level">{{ skill.level }}</span>
-          </div>
+        <div class="skill">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-level">{{ skill.level }}</span>
+        </div>
         }
       </div>
 
@@ -31,7 +33,7 @@
         <h5>Logros destacados:</h5>
         <ul>
           @for (item of achievements; track item) {
-            <li>{{ item }}</li>
+          <li>{{ item }}</li>
           }
         </ul>
       </div>
