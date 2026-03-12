@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.scss',
 })
 export class Home {
-  name = 'Tu Nombre';
-  role = 'Fullstack Developer';
-  tagline = 'Construyo aplicaciones web modernas y escalables con Angular, Node.js y más.';
+  name = 'David Benavides';
+  role = 'Desarrollador Fullstack';
+  tagline = 'Fullstack developer especializado en Java + Spring Boot y Angular. Construyo APIs REST seguras, microservicios y aplicaciones web escalables.';
 }

@@ -16,33 +16,21 @@ interface ContactForm {
   styleUrl: './contact.scss',
 })
 export class Contact {
-// Modelo del formulario
-  form = signal<ContactForm>({
-    name: '',
-    email: '',
-    message: ''
-  });
+  copyEmail() {
+    const email = document.getElementById('email-text')?.textContent;
+    const tooltip = document.getElementById('tooltip');
 
-  // Método de envío
-  submitForm() {
-    const data = this.form();
+    if (email && tooltip) {
+      // Copiar al portapapeles
+      navigator.clipboard.writeText(email).then(() => {
+        // Mostrar tooltip
+        tooltip.classList.add('show');
 
-    // Validación simple
-    if (!data.name || !data.email || !data.message) {
-      console.warn('Todos los campos son obligatorios');
-      return;
+        // Ocultar tooltip después de 1.5 segundos
+        setTimeout(() => {
+          tooltip.classList.remove('show');
+        }, 1500);
+      });
     }
-
-    // Aquí podrías enviar a un backend real
-    console.log('Mensaje enviado:', data);
-
-    // Limpiar formulario
-    this.form.set({
-      name: '',
-      email: '',
-      message: ''
-    });
-
-    alert('¡Mensaje enviado correctamente!');
   }
 }

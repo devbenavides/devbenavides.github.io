@@ -1,11 +1,12 @@
-/* ========================
-   CONTACT SECTION DARK/LIGHT
-   Con padding corregido para cards/modals
+/* =========================
+   Contact Section Final
 ========================= */
 
-/* Sección principal */
 .contact {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: var(--bg-primary);
   color: var(--text-primary);
   transition: background 0.3s, color 0.3s;
@@ -14,83 +15,143 @@
 .contact h2 {
   text-align: center;
   color: var(--accent);
-  margin-bottom: 3rem;
-  transition: color 0.3s;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
 }
 
-/* Contenedor del formulario */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem; /* <-- padding interno */
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: background 0.3s, border-color 0.3s;
-  box-sizing: border-box; /* evita overflow por padding */
-}
-
-/* Inputs y textarea */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.8rem 1rem; /* espacio interno dentro de cada input */
-  margin-bottom: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
+.contact-intro {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-secondary);
   font-size: 1rem;
-  box-sizing: border-box;
+  line-height: 1.5;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ===================
+   Cards
+=================== */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: transform 0.2s, border 0.2s;
+  animation: fadeUp 0.6s ease forwards;
+  width: 100%;
+  position: relative; /* necesario para algunos elementos internos */
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
   border-color: var(--accent);
 }
 
-/* Placeholder */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--text-secondary);
+/* ===================
+   Iconos
+=================== */
+.icon {
+  font-size: 1.4rem;
 }
 
-/* Botón */
-.contact-form button {
-  padding: 0.8rem 1.6rem;
+/* ===================
+   Email específico
+=================== */
+.contact-email {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.email-link {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.email-link:hover {
+  opacity: 0.7;
+}
+
+/* ===================
+   Botón copiar con tooltip
+=================== */
+.copy-wrapper {
+  position: relative; /* tooltip será relativo al botón */
+  margin-left: auto;  /* empuja el botón al extremo derecho */
+  display: inline-block;
+}
+
+.copy-btn {
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
   background: var(--accent);
   color: var(--bg-primary);
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s, background 0.3s, color 0.3s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-.contact-form button:hover {
+.copy-btn:hover {
   transform: scale(1.05);
-  background: var(--text-primary);
-  color: var(--accent);
+  opacity: 0.8;
 }
 
-/* Mensajes de error */
-.contact-form .error {
-  color: #ff6b6b;
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 100%;       /* justo encima del botón */
+  left: 50%;          /* centrado respecto al botón */
+  transform: translateX(-50%) translateY(-5px);
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
 }
 
-/* Si está dentro de un card o modal */
-.card .contact-form,
-.modal-content .contact-form {
-  padding: 2rem; /* asegura espacio desde todos los bordes */
-  box-sizing: border-box;
+.tooltip.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-/* Responsive */
+/* ===================
+   Animación
+=================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================
+   Responsive
+=================== */
 @media(max-width:768px){
-  .contact-form {
-    padding: 1.5rem;
+  .contact-container {
+    gap: 0.8rem;
+  }
+
+  .contact-card {
+    padding: 1rem 1.2rem;
   }
 }

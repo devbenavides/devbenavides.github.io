@@ -1,41 +1,51 @@
 <section class="contact">
+
   <h2>Contacto</h2>
 
-  <form class="contact-form" (submit)="submitForm()" #contactForm="ngForm" novalidate>
+  <p class="contact-intro">
+    Si quieres colaborar, tienes una oportunidad laboral o simplemente quieres hablar de tecnología, puedes contactarme aquí.
+  </p>
 
-    <input 
-      type="text" 
-      name="name" 
-      placeholder="Nombre" 
-      [(ngModel)]="form().name" 
-      required
-    />
-    <div class="error" *ngIf="contactForm.submitted && !form().name">
-      Este campo es obligatorio
+  <div class="contact-container">
+
+    <!-- Email con Gmail y botón copiar -->
+    <div class="contact-card">
+      <span class="icon">📧</span>
+
+      <div class="contact-email">
+        <h3>Email</h3>
+        <p id="email-text">angdab07@gmail.com</p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=angdab07@gmail.com&su=Contacto%20desde%20portafolio&body=Hola%20David," 
+           target="_blank" rel="noopener noreferrer" class="email-link">
+          Abrir Gmail
+        </a>
+      </div>
+
+      <!-- Botón copiar con tooltip -->
+      <div class="copy-wrapper">
+        <button class="copy-btn" (click)="copyEmail()">Copiar Email</button>
+        <span class="tooltip" id="tooltip">¡Copiado!</span>
+      </div>
     </div>
 
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Email" 
-      [(ngModel)]="form().email" 
-      required
-    />
-    <div class="error" *ngIf="contactForm.submitted && !form().email">
-      Este campo es obligatorio
-    </div>
+    <!-- GitHub -->
+    <a href="https://github.com/devbenavides" target="_blank" rel="noopener noreferrer" class="contact-card">
+      <span class="icon">💻</span>
+      <div>
+        <h3>GitHub</h3>
+        <p>github.com/devbenavides</p>
+      </div>
+    </a>
 
-    <textarea 
-      name="message" 
-      rows="6" 
-      placeholder="Mensaje" 
-      [(ngModel)]="form().message" 
-      required
-    ></textarea>
-    <div class="error" *ngIf="contactForm.submitted && !form().message">
-      Este campo es obligatorio
-    </div>
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/benavides-david" target="_blank" rel="noopener noreferrer" class="contact-card">
+      <span class="icon">💼</span>
+      <div>
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/benavides-david</p>
+      </div>
+    </a>
 
-    <button type="submit">Enviar</button>
-  </form>
+  </div>
+
 </section>

@@ -2,30 +2,35 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  standalone:true,
+  standalone: true,
   imports: [],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
 export class About {
   name = 'David Benavides';
-  role = 'Fullstack Developer';
-  description = `Soy un desarrollador Fullstack apasionado por construir aplicaciones modernas, 
-escalables y con interfaces atractivas. Tengo experiencia trabajando con Angular, Node.js, 
-bases de datos SQL y NoSQL, y me encanta optimizar la experiencia de usuario.`;
+  role = 'Desarrollador Fullstack | Java + Spring Boot | Angular';
+  description = `Soy desarrollador Fullstack con experiencia en el desarrollo de aplicaciones web utilizando Java con Spring Boot en el backend y TypeScript con Angular en el frontend. 
+Me enfoco en construir aplicaciones escalables y mantenibles, aplicando buenas prácticas de desarrollo y arquitectura. Tengo experiencia diseñando e implementando APIs REST y microservicios, integrando autenticación y autorización con JWT y Spring Security.
+También trabajo con bases de datos relacionales como PostgreSQL y MySQL, y desarrollo interfaces modulares y reutilizables con Angular. Actualmente estoy aprendiendo React para ampliar mis habilidades en desarrollo frontend.`;
 
   skills = [
-    { name: 'Angular', level: 'Avanzado' },
-    { name: 'Node.js', level: 'Avanzado' },
-    { name: 'TypeScript', level: 'Avanzado' },
-    { name: 'HTML & CSS', level: 'Avanzado' },
-    { name: 'MongoDB', level: 'Intermedio' },
-    { name: 'SQL', level: 'Intermedio' },
+    { name: "Java", level: "Avanzado" },
+    { name: "Spring Boot", level: "Avanzado" },
+    { name: "Angular", level: "Intermedio" },
+    { name: "TypeScript", level: "Intermedio" },
+    { name: "REST APIs", level: "Avanzado" },
+    { name: "Spring Security", level: "Intermedio" },
+    { name: "PostgreSQL", level: "Intermedio" },
+    { name: "MySQL", level: "Intermedio" },
+    { name: "React", level: "Aprendiendo" }
   ];
 
   achievements = [
-    'Desarrollé 10+ proyectos fullstack exitosos',
-    'Optimización de rendimiento en aplicaciones web',
-    'Integración de APIs REST y GraphQL'
+    "Diseño e implementación de APIs REST seguras con JWT y Spring Security",
+    "Desarrollo de arquitectura basada en microservicios con Spring Boot",
+    "Construcción de interfaces frontend modulares con Angular",
+    "Aplicación de buenas prácticas de código limpio y arquitectura escalable",
+    "Trabajo bajo metodologías ágiles como Scrum y XP"
   ];
 }
