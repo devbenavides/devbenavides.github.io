@@ -14,8 +14,10 @@ export class About {
     "Soy desarrollador Fullstack enfocado en la creación de aplicaciones web escalables y mantenibles.",
     "Trabajo principalmente con Java y Spring Boot en el backend y TypeScript con Angular en el frontend, desarrollando APIs REST, microservicios y aplicaciones web modernas.",
     "Tengo experiencia implementando sistemas de autenticación y autorización mediante JWT y Spring Security. Además, trabajo con bases de datos relacionales como PostgreSQL y MySQL, y desarrollo interfaces frontend modulares, reutilizables y mantenibles con Angular.",
+    "También tengo experiencia en la contenedorización de aplicaciones utilizando Docker, lo que me permite desplegar sistemas completos de forma reproducible y simplificar el entorno de desarrollo.",
     "De forma complementaria, también tengo experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin.",
-    "Actualmente estoy aprendiendo React para ampliar mis habilidades en desarrollo frontend y seguir creciendo como desarrollador."];
+    "Actualmente estoy aprendiendo React para ampliar mis habilidades en desarrollo frontend y seguir creciendo como desarrollador."
+  ];
 
   skills = [
     { name: "Java", level: "Avanzado" },
@@ -26,6 +28,7 @@ export class About {
     { name: "Spring Security", level: "Intermedio" },
     { name: "PostgreSQL", level: "Intermedio" },
     { name: "MySQL", level: "Intermedio" },
+    { name: "Docker", level: "Intermedio" },
     { name: "React", level: "Aprendiendo" }
   ];
 

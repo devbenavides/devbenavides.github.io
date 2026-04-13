@@ -26,6 +26,7 @@ export class Stack {
   devOps = [
     { name: 'Git & GitHub', level: 90 },
     { name: 'Bitbucket', level: 40 },
+    { name: 'Docker', level: 50 },
   ];
 
 }

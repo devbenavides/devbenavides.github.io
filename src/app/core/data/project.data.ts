@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: 'Academictech',
-    description: 'Aplicación web fullstack para la gestión académica que permite administrar usuarios, docentes, estudiantes, cursos, matrículas y calificaciones. Backend desarrollado con Spring Boot y Spring Security, exponiendo una API REST con autenticación stateless basada en JWT y un sistema de control de acceso basado en roles y permisos. Frontend construido con React bajo una arquitectura modular basada en features, con componentes reutilizables que facilitan la escalabilidad y el mantenimiento del sistema.',
+    description: 'Aplicación web fullstack para la gestión académica que permite administrar usuarios, docentes, estudiantes, cursos, matrículas y calificaciones. Backend desarrollado con Spring Boot y Spring Security, exponiendo una API REST con autenticación stateless basada en JWT y un sistema de control de acceso basado en roles y permisos. Frontend construido con React bajo una arquitectura modular basada en features, con componentes reutilizables que facilitan la escalabilidad y el mantenimiento del sistema. El sistema está contenedorizado con Docker y orquestado mediante Docker Compose para facilitar su despliegue reproducible.',
     keyFeatures: [
       'Autenticación segura mediante JWT',
       'Control de acceso basado en roles y permisos',
@@ -15,7 +15,10 @@ export const PROJECTS: Project[] = [
       'Manejo centralizado de excepciones en la API',
       'Uso de DTOs para desacoplar la capa de persistencia',
       'Persistencia de datos con PostgreSQL',
-      'Interfaz responsiva optimizada para diferentes dispositivos'
+      'Interfaz responsiva optimizada para diferentes dispositivos',
+      'Arquitectura distribuida con repositorios independientes para frontend, backend e infraestructura',
+      'Orquestación del sistema mediante un repositorio de infraestructura con Docker Compose',
+      'Despliegue reproducible y automatizado mediante un solo comando'
     ],
     images: [
       { url: 'assets/images/academic-tech/atb_1.png', type: 'pc' },
@@ -28,16 +31,18 @@ export const PROJECTS: Project[] = [
       { url: 'assets/images/academic-tech/atf_4.png', type: 'pc' },
       { url: 'assets/images/academic-tech/atf_5.png', type: 'pc' },
       { url: 'assets/images/academic-tech/atf_6.png', type: 'pc' },
+      { url: 'assets/images/academic-tech/atf_7.png', type: 'pc' },
     ],
     technologies: [
       'Spring Boot',
       'Spring Security',
       'JWT',
       'React',
-      'PostgreSQL'
+      'PostgreSQL',
+      'Docker'
     ],
-    githubBackend: 'https://github.com/devbenavides/academic-tech-api',
-    githubFrontend: 'https://github.com/devbenavides/academic-tech-ui',
+    githubBackend: 'https://github.com/devbenavides/academic-tech',
+    githubFrontend: '',
     demo: ''
   },
   {
