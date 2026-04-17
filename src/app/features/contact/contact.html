@@ -14,7 +14,7 @@
 
       <div class="contact-email">
         <h3>Email</h3>
-        <p id="email-text">angdab07@gmail.com</p>
+        <p #emailText>angdab07@gmail.com</p>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=angdab07@gmail.com&su=Contacto%20desde%20portafolio&body=Hola%20David," 
            target="_blank" rel="noopener noreferrer" class="email-link">
           Abrir Gmail
@@ -23,8 +23,8 @@
 
       <!-- Botón copiar con tooltip -->
       <div class="copy-wrapper">
-        <button class="copy-btn" (click)="copyEmail()">Copiar Email</button>
-        <span class="tooltip" id="tooltip">¡Copiado!</span>
+        <button class="copy-btn" (click)="copyEmail(emailText.textContent)">Copiar Email</button>
+        <span class="tooltip" [class.show]="showTooltip">¡Copiado!</span>
       </div>
     </div>
 
@@ -43,6 +43,15 @@
       <div>
         <h3>LinkedIn</h3>
         <p>linkedin.com/in/benavides-david</p>
+      </div>
+    </a>
+    
+    <!-- CV -->
+    <a href="assets/documents/CV_DavidBenavides.pdf" target="_blank" rel="noopener noreferrer" class="contact-card">
+      <span class="icon">📄</span>
+      <div>
+        <h3>CV</h3>
+        <p>Ver o descargar mi hoja de vida</p>
       </div>
     </a>
 

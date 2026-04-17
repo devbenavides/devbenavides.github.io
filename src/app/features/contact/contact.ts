@@ -16,21 +16,17 @@ interface ContactForm {
   styleUrl: './contact.scss',
 })
 export class Contact {
-  copyEmail() {
-    const email = document.getElementById('email-text')?.textContent;
-    const tooltip = document.getElementById('tooltip');
+  showTooltip = false;
 
-    if (email && tooltip) {
-      // Copiar al portapapeles
-      navigator.clipboard.writeText(email).then(() => {
-        // Mostrar tooltip
-        tooltip.classList.add('show');
+  copyEmail(email: string | null) {
+    if (!email) return;
 
-        // Ocultar tooltip después de 1.5 segundos
-        setTimeout(() => {
-          tooltip.classList.remove('show');
-        }, 1500);
-      });
-    }
+    navigator.clipboard.writeText(email).then(() => {
+      this.showTooltip = true;
+
+      setTimeout(() => {
+        this.showTooltip = false;
+      }, 1500);
+    });
   }
 }
