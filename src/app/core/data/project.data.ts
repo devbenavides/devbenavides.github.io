@@ -103,8 +103,62 @@ export const PROJECTS: Project[] = [
       { url: 'assets/images/mini-pos-calculator/mc_6.jpg', type: 'mobile' },
       { url: 'assets/images/mini-pos-calculator/mc_7.png', type: 'pc' },
     ],
-    technologies: ['Jetpack Compose','Kotlin', 'SQLite' ],
+    technologies: ['Jetpack Compose', 'Kotlin', 'SQLite'],
     githubBackend: 'https://github.com/devbenavides/mini-pos-calculator',
+    githubFrontend: '',
+    demo: ''
+  },
+  {
+    id: 3,
+    title: "Mini POS (Multiplatform)",
+    description:
+      "Aplicación de punto de venta desarrollada con Kotlin y Jetpack Compose Multiplatform, diseñada para gestionar productos y ventas mediante una arquitectura limpia y escalable. El proyecto implementa Clean Architecture y el patrón MVVM, separando claramente las capas de dominio, datos y presentación. Permite administrar el ciclo completo de ventas, incluyendo carrito dinámico, manejo de estados (pendiente, completada y cancelada), historial persistente y generación básica de reportes.",
+
+    keyFeatures: [
+      "Gestión completa de productos (crear, editar, eliminar y listar).",
+      "Carrito de ventas interactivo con control de cantidades.",
+      "Búsqueda de producto para agregar a la venta",
+      "Cálculo automático de subtotal y total de la venta.",
+      "Creación y gestión de múltiples ventas simultáneas.",
+      "Listado de ventas con estados: pendiente, completada y cancelada.",
+      "Edición de productos dentro de una venta activa.",
+      "Cancelación y finalización de ventas.",
+      "Historial de ventas persistente.",
+      "Generación básica de reportes de ventas."
+    ],
+
+    futureImprovements: [
+      "Mejorar y optimizar la generación de reportes.",
+      "Implementar estadísticas de productos más vendidos.",
+      "Agregar categorías de productos.",
+      "Sincronización con backend y almacenamiento en la nube.",
+      "Implementar modo oscuro.",
+      "Expandir soporte a web y desktop.",
+      "Mejorar experiencia de usuario y rendimiento general."
+    ],
+
+
+    images: [
+      { url: 'assets/images/mini-pos-multiplatform/mp_1.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_2.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_3.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_4.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_5.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_6.jpg', type: 'mobile' },
+      { url: 'assets/images/mini-pos-multiplatform/mp_7.png', type: 'pc' },
+    ],
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Compose Multiplatform",
+      "MVVM",
+      "Clean Architecture",
+      "SQLDelight",
+      "StateFlow (Kotlin Coroutines)",
+      "Compose State Management (collectAsState)",
+      "Use Cases Pattern"
+    ],
+    githubBackend: 'https://github.com/devbenavides/minipos',
     githubFrontend: '',
     demo: ''
   }
